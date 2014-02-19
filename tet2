@@ -1,0 +1,16 @@
+var https = require('https')
+
+
+var req = https.request({
+	hostname: 'docs.google.com',
+	port: 443,
+	path: '/document/d/1drikTOJ-hJp9S6Dg0a3k4wxpxoeRzXChY82gw75cBEM/pub',
+	method: 'GET'
+
+}, function(res) {
+	res.on('data', function(d) {
+		process.stdout.write(d);
+	})
+});
+
+req.end();

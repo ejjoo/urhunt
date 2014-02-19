@@ -1,0 +1,44 @@
+<div class="container">
+<div class="row">
+<div class="col-md-1">건물이름: <%=building.name%></div>
+<div class="col-md-1">주소: <%=building.address%></div>
+<div class="col-md-1">교통편: </div>
+<ul>
+<% for (var idx in building.traffics) {%>
+<li><%= building.traffics[idx] %></li>
+<% } %>
+</ul>
+<div class="col-md-1">건물사진</div>
+<img src="<%=building.imageUrl%>" class="image-thumbnail">
+<div class="col-md-1">지도</div>
+<img src="<%=building.mapImageUrl%>" class="image-thumbnail">
+<div class="col-md-1">홈페이지</div>
+<a href='<%=building.url%>'><%=building.url%></a>
+</div>
+
+<table class="table table-striped">
+<thead>
+<th>호수</th>
+<th>층</th>
+<th>타입</th>
+<th>넓이</th>
+<th>월세</th>
+<th>관리비</th>
+<th>년도</th>
+</thead>
+<tbody>
+<% for (var idx in building.houses) { %>
+<% var house = building.houses[idx]; %>
+<tr>
+<td><%=house.no%></td>
+<td><%=house.floor%></td>
+<td><%=house.type%></td>
+<td><%=house.size%></td>
+<td><%=house.monthlyFee%></td>
+<td><%=house.maintainanceFee%></td>
+<td><%=house.established%></td>
+</tr>
+<% } %>
+</tbody>
+</table>
+</div>
